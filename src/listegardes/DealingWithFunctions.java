@@ -49,6 +49,7 @@ public class DealingWithFunctions {
         return customString;
     }
 
+	/*Modification made by Anes from FORK*/
     public ArrayList<Object> getArrayListOfInteger(int size) {
 
         ArrayList<Object> myList = new ArrayList<>(size);
