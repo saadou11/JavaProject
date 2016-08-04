@@ -16,7 +16,7 @@ import shapes.*;
 public class ShapeFactory extends AbstractFactory {
 
     @Override
-    Shape getShape(String shapeType) {
+    public Shape getShape(String shapeType) {
         if (shapeType == null) {
             return null;
         }
@@ -35,7 +35,7 @@ public class ShapeFactory extends AbstractFactory {
     }
 
     @Override
-    Color getColor(String color) {
+    public Color getColor(String color) {
         return null;
     }
 

@@ -13,7 +13,7 @@ public class Square implements Shape {
 
     @Override
     public void draw() {
-        System.out.println("draw function from square");
+        System.out.println("Inside Square::draw() method.");
     }
 
 }

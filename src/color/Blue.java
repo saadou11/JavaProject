@@ -3,19 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main;
+package color;
 
 /**
  *
  * @author Anès
  */
-public class JavaProject {
+public class Blue implements Color {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    @Override
+    public void fill() {
+        System.out.println("Inside Blue::fill() method.");
     }
 
 }
