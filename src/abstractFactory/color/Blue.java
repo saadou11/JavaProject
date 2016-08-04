@@ -3,14 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package color;
+package abstractFactory.color;
 
 /**
  *
  * @author Anès
  */
-public interface Color {
+public class Blue implements Color {
 
-    void fill();
+    @Override
+    public void fill() {
+        System.out.println("Inside Blue::fill() method.");
+    }
 
 }

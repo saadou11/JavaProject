@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package shapes;
+package abstractFactory.shapes;
 
 /**
  *
  * @author Anès
  */
-public class Square implements Shape {
+public class Circle implements Shape {
 
     @Override
     public void draw() {
-        System.out.println("Inside Square::draw() method.");
+        System.out.println("Inside Circle::draw() method.");
     }
 
 }

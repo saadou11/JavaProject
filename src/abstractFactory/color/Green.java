@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package shapes;
+package abstractFactory.color;
 
 /**
  *
  * @author Anès
  */
-public class Circle implements Shape {
+public class Green implements Color {
 
     @Override
-    public void draw() {
-        System.out.println("Inside Circle::draw() method.");
+    public void fill() {
+        System.out.println("Inside Green::fill() method.");
     }
 
 }

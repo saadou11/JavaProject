@@ -6,8 +6,8 @@
 package main;
 
 import abstractFactory.factory.*;
-import color.Color;
-import shapes.Shape;
+import abstractFactory.color.Color;
+import abstractFactory.shapes.Shape;
 
 /**
  *

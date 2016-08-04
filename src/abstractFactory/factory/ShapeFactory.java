@@ -5,9 +5,11 @@
  */
 package abstractFactory.factory;
 
-import color.Color;
-import shapes.Circle;
-import shapes.*;
+import abstractFactory.shapes.Rectangle;
+import abstractFactory.shapes.Shape;
+import abstractFactory.shapes.Square;
+import abstractFactory.color.Color;
+import abstractFactory.shapes.Circle;
 
 /**
  *
