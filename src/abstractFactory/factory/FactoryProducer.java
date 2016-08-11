@@ -11,13 +11,22 @@ package abstractFactory.factory;
  */
 public class FactoryProducer {
 
-    public static AbstractFactory getFactory(String choice) {
+    private static AbstractFactory shapeFactoryInstance = null;
+    private static AbstractFactory colorFactoryInstance = null;
+
+    public static AbstractFactory getFactoryProducerInstance(String choice) {
 
         if (choice.equalsIgnoreCase("SHAPE")) {
-            return new ShapeFactory();
+            if (shapeFactoryInstance == null) {
+                shapeFactoryInstance = new ShapeFactory();
+            }
+            return shapeFactoryInstance;
 
         } else if (choice.equalsIgnoreCase("COLOR")) {
-            return new ColorFactory();
+            if (colorFactoryInstance == null) {
+                colorFactoryInstance = new ColorFactory();
+            }
+            return colorFactoryInstance;
         }
 
         return null;
