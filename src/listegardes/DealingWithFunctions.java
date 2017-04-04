@@ -49,34 +49,35 @@ public class DealingWithFunctions {
         return customString;
     }
 
-	/*Modification made by Anes from FORK*/
+    /*Modification made by Anes from FORK*/
     public ArrayList<Object> getArrayListOfInteger(int size) {
 
         ArrayList<Object> myList = new ArrayList<>(size);
-        
+
         for (int i = 0; i < size; i++) {
             myList.add(i);
         }
-        return myList; 
+        return myList;
 
     }
-    
+
     public ArrayList<Object> getArrayListOfStrings(int size, String s) {
 
         ArrayList<Object> myList = new ArrayList<>(size);
-        
+
         for (int i = 0; i < size; i++) {
             myList.add(s);
         }
-        return myList; 
+        return myList;
 
     }
-    
-    public void printArrayList(ArrayList<Object> list){
-        
-        for(Object obj : list)
+
+    public void printArrayList(ArrayList<Object> list) {
+
+        for (Object obj : list) {
             System.out.println(obj.toString());
-    
+        }
+
     }
 
     /* Static methods can be called directly from the class name. 
@@ -94,17 +95,16 @@ public class DealingWithFunctions {
         System.out.println("LET'S CALL THE FIRST METHOD");
         myClass.getUpdatedString(args[0]); // your function will update the string hello !
         System.out.println("LET'S CALL THE SECOND METHOD");
-        
+
         /* CAST A VARIABLE MEANS THAT WE GET ITS VALUE FOR A DIFFERENT TYPE */
         ArrayList listOfInt = myClass.getArrayListOfInteger(Integer.valueOf(args[1])); // your method should create an arrayList containing 10 integers ( from 0 to 9)
         ArrayList listOfString = myClass.getArrayListOfStrings(Integer.valueOf(args[1]), args[0]); // your method should create an arrayList containing 10 integers ( from 0 to 9)
-        
+
         System.out.println("MY LIST OF INTEGER VALUES :");
         myClass.printArrayList(listOfInt);
         System.out.println("MY LIST OF STRING VALUES :");
         myClass.printArrayList(listOfString);
-        
-        
+
         System.out.println("OUT OF PRINT FUNCTION");
         String s1 = myClass.getUpdatedString("hello");
         System.out.println(s1);
