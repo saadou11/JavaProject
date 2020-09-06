@@ -20,6 +20,7 @@ public class RunFactory {
     public static void main(String[] args) {
 
         AbstractFactory shapeFactory = FactoryProducer.getFactoryProducerInstance("SHAPE");
+        assert shapeFactory != null;
 
         Shape shape1 = shapeFactory.getShape("CIRCLE");
         shape1.draw();
@@ -32,6 +33,7 @@ public class RunFactory {
 
 
         AbstractFactory colorFactory = FactoryProducer.getFactoryProducerInstance("COLOR");
+        assert colorFactory != null;
 
         Color color1 = colorFactory.getColor("RED");
         color1.fill();
