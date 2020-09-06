@@ -12,7 +12,6 @@ import abstractFactory.color.Color;
 import abstractFactory.shapes.Circle;
 
 /**
- *
  * @author Anès
  */
 public class ShapeFactory extends AbstractFactory {

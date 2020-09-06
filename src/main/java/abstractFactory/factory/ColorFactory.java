@@ -9,7 +9,6 @@ import abstractFactory.color.*;
 import abstractFactory.shapes.Shape;
 
 /**
- *
  * @author Anès
  */
 public class ColorFactory extends AbstractFactory {

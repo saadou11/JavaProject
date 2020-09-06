@@ -3,17 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package abstractFactory.color;
+package abstractFactory.shapes;
 
 /**
- *
  * @author Anès
  */
-public class Blue implements Color {
+public class Rectangle implements Shape {
 
     @Override
-    public void fill() {
-        System.out.println("Inside Blue::fill() method.");
+    public void draw() {
+        System.out.println("Inside Rectangle::draw() method.");
     }
 
 }

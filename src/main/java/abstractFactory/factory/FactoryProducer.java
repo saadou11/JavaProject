@@ -6,7 +6,6 @@
 package abstractFactory.factory;
 
 /**
- *
  * @author Anès
  */
 public class FactoryProducer {

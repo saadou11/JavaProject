@@ -6,7 +6,6 @@
 package abstractFactory.shapes;
 
 /**
- *
  * @author Anès
  */
 public interface Shape {

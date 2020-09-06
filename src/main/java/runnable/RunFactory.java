@@ -3,14 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main;
+package runnable;
 
 import abstractFactory.factory.*;
 import abstractFactory.color.Color;
 import abstractFactory.shapes.Shape;
 
 /**
- *
  * @author Anès
  */
 public class RunFactory {
@@ -19,7 +18,7 @@ public class RunFactory {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+
         AbstractFactory shapeFactory = FactoryProducer.getFactoryProducerInstance("SHAPE");
 
         Shape shape1 = shapeFactory.getShape("CIRCLE");
