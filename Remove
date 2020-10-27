@@ -6,3 +6,4 @@ second line from debug branch
 third line from branch master
 fourth line from debug ==> rebase ?
 fifth line in debug
+rebase && merge
