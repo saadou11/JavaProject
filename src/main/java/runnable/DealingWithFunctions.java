@@ -38,7 +38,7 @@ public class DealingWithFunctions {
          2 : print it
          3 : print its size
          4 : add a prefix "pre_" and a suffix "_suf" so that if string is hello , you should print pre_hello_suff
-         PLEASE NOTE THAT : I don't want something like systeme.out.printlen("pre_"+variable+"_suf" !! 
+         PLEASE NOTE THAT : I don't want something like system.out.println("pre_"+variable+"_suf" !!
          I want you to create another string called customString and call the methode that appends a string to another !  GOOGLE IS YOUR FRIEND !
         
          5: print the first string in UPPER case
@@ -80,7 +80,7 @@ public class DealingWithFunctions {
     }
 
     /* Static methods can be called directly from the class name. 
-     There is no need to instantite the class to acces this type of methods
+     There is no need to instantiate the class to accesses this type of methods
      */
     public static int MyStaticMethod() {
         return 100;
@@ -96,8 +96,8 @@ public class DealingWithFunctions {
         System.out.println("LET'S CALL THE SECOND METHOD");
 
         /* CAST A VARIABLE MEANS THAT WE GET ITS VALUE FOR A DIFFERENT TYPE */
-        ArrayList listOfInt = myClass.getArrayListOfInteger(Integer.valueOf(args[1])); // your method should create an arrayList containing 10 integers ( from 0 to 9)
-        ArrayList listOfString = myClass.getArrayListOfStrings(Integer.valueOf(args[1]), args[0]); // your method should create an arrayList containing 10 integers ( from 0 to 9)
+        ArrayList<Object> listOfInt = myClass.getArrayListOfInteger(Integer.parseInt(args[1])); // your method should create an arrayList containing 10 integers ( from 0 to 9)
+        ArrayList<Object> listOfString = myClass.getArrayListOfStrings(Integer.parseInt(args[1]), args[0]); // your method should create an arrayList containing 10 integers ( from 0 to 9)
 
         System.out.println("MY LIST OF INTEGER VALUES :");
         myClass.printArrayList(listOfInt);
