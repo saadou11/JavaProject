@@ -18,6 +18,7 @@ import spring.services.AwsConnectService;
 
 import javax.validation.Valid;
 
+
 @RestController
 @Conditional(IsSecurityEnabledCondition.class)
 public class AuthenticationController {
@@ -33,22 +34,20 @@ public class AuthenticationController {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        PasswordEncoder bcrypt = null;
-        if (bcrypt == null)
-            bcrypt = new BCryptPasswordEncoder();
-        return bcrypt;
+        return new BCryptPasswordEncoder();
     }
 
     @PostMapping("authenticate")
     public JwtResponse createAuthenticationToken(@Valid @RequestBody UserCredentials credentials) {
         JwtResponse response = new JwtResponse();
         response.setUser(credentials.login);
-        if (isAuthenticate(credentials.userID, credentials.login, credentials.password)) {
-            response.setToken(tokenProvider.getJwtTokenAsString(credentials.login));
-            response.setStatus(HttpStatus.SC_OK);
-        } else {
+
+        //if (isAuthenticate(credentials.userID, credentials.login, credentials.password)) {
+        response.setToken(tokenProvider.getJwtTokenAsString(credentials.login));
+        response.setStatus(HttpStatus.SC_OK);
+        /*} else {
             response.setStatus(HttpStatus.SC_UNAUTHORIZED);
-        }
+        }*/
         return response;
     }
 
