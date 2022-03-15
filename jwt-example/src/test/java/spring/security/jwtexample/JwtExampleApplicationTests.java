@@ -1,9 +1,8 @@
 package spring.security.jwtexample;
 
-import com.amazonaws.services.dynamodbv2.document.Item;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
-import org.apache.hadoop.io.MD5Hash;
+import io.jsonwebtoken.lang.Assert;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,8 +15,6 @@ import spring.services.AwsConnectService;
 import java.util.Date;
 import java.util.Map;
 
-import static org.assertj.core.api.Assertions.*;
-
 @SpringBootTest
 class JwtExampleApplicationTests {
 
@@ -29,10 +26,7 @@ class JwtExampleApplicationTests {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        PasswordEncoder bcrypt = null;
-        if (bcrypt == null)
-            bcrypt = new BCryptPasswordEncoder();
-        return bcrypt;
+        return new BCryptPasswordEncoder();
     }
 
     @Test
@@ -40,9 +34,8 @@ class JwtExampleApplicationTests {
 
     @Test
     void checkPasswordEncoder() {
-        Item item = awsConnectService.getUserDetails(0);
-        String password = passwordEncoder().encode(item.getString("password"));
-        assertThat(passwordEncoder().matches("toto", password));
+        String password = passwordEncoder().encode("PWD");
+        Assert.isTrue(passwordEncoder().matches("PWD", password));
     }
 
     @Test
@@ -55,13 +48,14 @@ class JwtExampleApplicationTests {
         for(Map.Entry entry : claims.entrySet())
             System.out.println(entry.getKey() +" ==> "+entry.getValue());
 
-        assertThat(claims.getSubject().equals("username"));
+        Assert.isTrue(tokenProvider.tokenHasExpired(token.compact()));
+        Assert.isTrue(claims.getSubject().equals("username"));
     }
 
     @Test
     void generateAndValidateToken() {
         String token = tokenProvider.getJwtTokenAsString("username");
-        assertThat(tokenProvider.tokenHasExpired(token)).isEqualTo(true);
+        Assert.isTrue(tokenProvider.tokenHasExpired(token));
     }
 
 }
